@@ -67,7 +67,7 @@ int main(void)
 
     */
 
-    list = curl_slist_append(list, "Auth-Token:f23992229db875e41fa7e28c55da1651f864ac7f495d913a5af5aabd659c72a1");
+    list = curl_slist_append(list, "Auth-Token:token");
 
      /* For POST REQUEST
 
@@ -77,15 +77,8 @@ int main(void)
 
     curl_easy_setopt(curl, CURLOPT_HTTPHEADER, list);
   
-    curl_easy_setopt(curl, CURLOPT_URL, "https://iot-dev.paytm.in/download/unbind.wav?name=paytm");
+    curl_easy_setopt(curl, CURLOPT_URL, "URI");
     
-    /* For POST REQUEST
-
-    //curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "{\"name\":\"paytm\"}");
-    // curl_easy_setopt(curl, CURLOPT_POSTFIELDS, bodylist);
-    // curl_easy_setopt(curl, CURLOPT_URL, "https://iot-dev.paytm.in/download/unbind.wav"); // for POST
-    
-    */
     
     curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, writefunc);
     curl_easy_setopt(curl, CURLOPT_WRITEDATA, outfile);
